@@ -1,0 +1,20 @@
+{
+  "name": "@hard-stack/logger",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@logtape/logtape": "2.2.1"
+  },
+  "devDependencies": {
+    "@hard-stack/tsconfig": "workspace:*",
+    "typescript": "6.0.3"
+  }
+}

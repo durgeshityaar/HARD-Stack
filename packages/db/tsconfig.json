@@ -1,0 +1,4 @@
+{
+  "extends": "@hard-stack/tsconfig/base.json",
+  "include": ["src", "*.ts"]
+}

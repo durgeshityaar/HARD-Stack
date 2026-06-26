@@ -1,0 +1,24 @@
+{
+  "name": "@hard-stack/auth",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts"
+  },
+  "scripts": {
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hard-stack/db": "workspace:*",
+    "@hard-stack/email": "workspace:*",
+    "@hard-stack/env": "workspace:*",
+    "better-auth": "1.6.22"
+  },
+  "devDependencies": {
+    "@hard-stack/tsconfig": "workspace:*",
+    "typescript": "6.0.3"
+  }
+}

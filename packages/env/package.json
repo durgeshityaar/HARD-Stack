@@ -1,0 +1,23 @@
+{
+  "name": "@hard-stack/env",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./server": "./src/server.ts",
+    "./client": "./src/client.ts"
+  },
+  "scripts": {
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@t3-oss/env-core": "0.13.11",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@hard-stack/tsconfig": "workspace:*",
+    "@types/node": "26.0.1",
+    "typescript": "6.0.3"
+  }
+}

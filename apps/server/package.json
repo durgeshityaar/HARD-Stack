@@ -1,0 +1,28 @@
+{
+  "name": "@hard-stack/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun run src/index.ts",
+    "build": "bun build ./src/index.ts --target bun --outdir dist",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hard-stack/api": "workspace:*",
+    "@hard-stack/auth": "workspace:*",
+    "@hard-stack/env": "workspace:*",
+    "@hard-stack/logger": "workspace:*",
+    "@hono/trpc-server": "0.4.2",
+    "@scalar/hono-api-reference": "0.11.6",
+    "hono": "4.12.27",
+    "trpc-to-openapi": "3.3.0"
+  },
+  "devDependencies": {
+    "@hard-stack/tsconfig": "workspace:*",
+    "@types/node": "26.0.1",
+    "typescript": "6.0.3"
+  }
+}

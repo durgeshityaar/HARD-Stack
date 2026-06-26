@@ -1,0 +1,27 @@
+{
+  "name": "@hard-stack/email",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "email:dev": "email dev --dir ./src/templates --port 3030"
+  },
+  "dependencies": {
+    "@hard-stack/env": "workspace:*",
+    "@react-email/components": "1.0.12",
+    "@react-email/render": "2.0.9",
+    "react": "19.2.7",
+    "resend": "6.16.0"
+  },
+  "devDependencies": {
+    "@hard-stack/tsconfig": "workspace:*",
+    "@types/react": "19.2.17",
+    "react-email": "6.6.5",
+    "typescript": "6.0.3"
+  }
+}

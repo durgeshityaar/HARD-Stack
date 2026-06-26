@@ -1,0 +1,41 @@
+{
+  "name": "@hard-stack/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hard-stack/auth": "workspace:*",
+    "@hard-stack/env": "workspace:*",
+    "@tanstack/react-query": "5.101.1",
+    "@tanstack/react-router": "1.170.16",
+    "@trpc/client": "11.18.0",
+    "@trpc/tanstack-react-query": "11.18.0",
+    "better-auth": "1.6.22",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "1.21.0",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "superjson": "2.2.6",
+    "tailwind-merge": "3.6.0"
+  },
+  "devDependencies": {
+    "@hard-stack/api": "workspace:*",
+    "@hard-stack/tsconfig": "workspace:*",
+    "@tailwindcss/vite": "4.3.1",
+    "@types/node": "26.0.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.3",
+    "tailwindcss": "4.3.1",
+    "typescript": "6.0.3",
+    "vite": "8.1.0"
+  }
+}

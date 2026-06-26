@@ -1,0 +1,29 @@
+{
+  "name": "@hard-stack/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts"
+  },
+  "scripts": {
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate",
+    "push": "drizzle-kit push",
+    "studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@hard-stack/env": "workspace:*",
+    "drizzle-orm": "0.45.2",
+    "postgres": "3.4.9"
+  },
+  "devDependencies": {
+    "@hard-stack/tsconfig": "workspace:*",
+    "@types/node": "26.0.1",
+    "drizzle-kit": "0.31.10",
+    "typescript": "6.0.3"
+  }
+}

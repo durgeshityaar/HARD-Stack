@@ -1,0 +1,36 @@
+---
+title: Hard Stack
+description: A typed, end-to-end TypeScript monorepo.
+template: splash
+hero:
+  tagline: Hono · tRPC · Drizzle · Better Auth · TanStack · Tailwind v4 — wired together.
+  actions:
+    - text: Getting Started
+      link: /guides/getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: API Reference
+      link: /reference/api/
+      icon: open-book
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What's inside
+
+<CardGrid stagger>
+  <Card title="Type-safe API" icon="setting">
+    tRPC routers double as an OpenAPI surface via `trpc-to-openapi`, rendered
+    with Scalar.
+  </Card>
+  <Card title="Auth & DB" icon="approve-check">
+    Better Auth on top of Drizzle + Postgres, with email/password and
+    verification emails via Resend.
+  </Card>
+  <Card title="Modern frontend" icon="laptop">
+    React 19 + Vite, TanStack Router & Query, and Tailwind v4.
+  </Card>
+  <Card title="One toolchain" icon="rocket">
+    Bun workspaces, Turbo pipelines, Biome, and Lefthook hooks.
+  </Card>
+</CardGrid>

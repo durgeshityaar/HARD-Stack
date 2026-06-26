@@ -1,0 +1,9 @@
+{
+  "//": "Root tsconfig — editor convenience only. Each workspace owns its own tsconfig that extends @hard-stack/tsconfig.",
+  "extends": "@hard-stack/tsconfig/base.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [],
+  "exclude": ["node_modules", "**/dist", "**/.astro"]
+}

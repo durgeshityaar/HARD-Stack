@@ -13,18 +13,17 @@
   "dependencies": {
     "@hard-stack/auth": "workspace:*",
     "@hard-stack/env": "workspace:*",
+    "@hard-stack/ui": "workspace:*",
     "@tanstack/react-query": "5.101.1",
     "@tanstack/react-router": "1.170.16",
     "@trpc/client": "11.18.0",
+    "@trpc/server": "11.18.0",
     "@trpc/tanstack-react-query": "11.18.0",
     "better-auth": "1.6.22",
-    "class-variance-authority": "0.7.1",
-    "clsx": "2.1.1",
     "lucide-react": "1.21.0",
     "react": "19.2.7",
     "react-dom": "19.2.7",
-    "superjson": "2.2.6",
-    "tailwind-merge": "3.6.0"
+    "superjson": "2.2.6"
   },
   "devDependencies": {
     "@hard-stack/api": "workspace:*",

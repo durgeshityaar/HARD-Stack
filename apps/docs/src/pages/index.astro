@@ -1,0 +1,243 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Hard Stack — typed end-to-end TypeScript monorepo";
+const description =
+  "A production-ready Bun + Turbo monorepo: Hono, tRPC, Drizzle, Better Auth, Resend, TanStack, Tailwind v4, and Astro — wired together with full type safety.";
+
+const features = [
+  {
+    name: "Type-safe API",
+    body: "tRPC routers double as an OpenAPI surface via trpc-to-openapi, rendered with Scalar. No codegen, no drift.",
+  },
+  {
+    name: "Auth + DB",
+    body: "Better Auth on Drizzle + Postgres, email/password with verification emails sent through Resend & React Email.",
+  },
+  {
+    name: "Modern frontend",
+    body: "React 19 + Vite SPA with TanStack Router & Query, a typed tRPC client, and Tailwind v4 with shadcn.",
+  },
+  {
+    name: "One toolchain",
+    body: "Bun workspaces, Turbo pipelines, Biome for lint/format, and Lefthook pre-commit hooks.",
+  },
+];
+
+const stack = [
+  "Bun",
+  "Turbo",
+  "Hono",
+  "tRPC",
+  "Drizzle",
+  "Better Auth",
+  "Resend",
+  "TanStack",
+  "Tailwind v4",
+  "Astro",
+  "Biome",
+];
+---
+
+<Layout title={title} description={description}>
+  <header class="nav">
+    <a href="/" class="brand">Hard&nbsp;Stack</a>
+    <nav>
+      <a href="/docs/">Docs</a>
+      <a href="/docs/reference/api/">API</a>
+      <a href="https://github.com/your-org/hard-stack" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">End-to-end TypeScript</p>
+      <h1>The hard stack, already wired together.</h1>
+      <p class="lede">{description}</p>
+      <div class="cta">
+        <a class="btn primary" href="/docs/guides/getting-started/">Get started</a>
+        <a class="btn ghost" href="/docs/">Read the docs</a>
+      </div>
+      <ul class="chips">
+        {stack.map((s) => <li>{s}</li>)}
+      </ul>
+    </section>
+
+    <section class="features" aria-label="Features">
+      {
+        features.map((f) => (
+          <article class="card">
+            <h2>{f.name}</h2>
+            <p>{f.body}</p>
+          </article>
+        ))
+      }
+    </section>
+  </main>
+
+  <footer>
+    <span>Hard Stack</span>
+    <a href="/docs/">Documentation</a>
+  </footer>
+</Layout>
+
+<style>
+  .nav {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .nav nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .nav nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .nav nav a:hover {
+    color: var(--text);
+  }
+
+  main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .hero {
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+  .eyebrow {
+    margin: 0 0 1rem;
+    color: var(--accent-2);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .hero h1 {
+    margin: 0 auto 1.25rem;
+    max-width: 16ch;
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    background: linear-gradient(180deg, #fff, #b9bcd6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .lede {
+    margin: 0 auto 2rem;
+    max-width: 58ch;
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+  .cta {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.3rem;
+    border-radius: 0.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      transform 0.05s ease,
+      background 0.2s ease;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn.primary {
+    background: var(--accent);
+    color: #0b0b0f;
+  }
+  .btn.primary:hover {
+    background: #98a0ff;
+  }
+  .btn.ghost {
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  .btn.ghost:hover {
+    background: var(--surface);
+  }
+
+  .chips {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .chips li {
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-bottom: 5rem;
+  }
+  .card {
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.9rem;
+  }
+  .card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+  .card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  footer {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+  }
+  footer a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: var(--text);
+  }
+
+  @media (max-width: 640px) {
+    .features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

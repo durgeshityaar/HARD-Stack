@@ -1,0 +1,12 @@
+/*
+ * Tailwind entry for the marketing pages. Import this from any custom Astro
+ * page that uses @hard-stack/ui components (e.g. `import "../styles/app.css"`
+ * in the page frontmatter). Keep it OUT of Starlight's docs pages so their
+ * styling is untouched. `@import "tailwindcss"` lets Tailwind auto-detect this
+ * app's components; the shared import adds @hard-stack/ui's tokens + scan.
+ *
+ * Currently not imported anywhere — the React + Tailwind toolchain is wired up
+ * and ready, but no marketing page renders shared components yet.
+ */
+@import "tailwindcss";
+@import "@hard-stack/ui/styles.css";

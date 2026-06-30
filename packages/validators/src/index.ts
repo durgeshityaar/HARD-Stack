@@ -16,16 +16,19 @@ export type SignUpInput = z.infer<typeof signUpSchema>;
 export const signInSchema = signUpSchema.pick({ email: true, password: true });
 export type SignInInput = z.infer<typeof signInSchema>;
 
-export const createPostSchema = z.object({
-  title: z.string().min(1).max(256),
-  content: z.string().min(1),
+export const createTodoSchema = z.object({
+  title: z.string().min(1, "Title is required").max(256),
 });
-export type CreatePostInput = z.infer<typeof createPostSchema>;
+export type CreateTodoInput = z.infer<typeof createTodoSchema>;
 
-export const updatePostSchema = createPostSchema.partial().extend({
+// Kept a plain ZodObject (no .refine) so trpc-to-openapi can map the {id} path
+// param. The "at least one field" rule is enforced in the todo router.
+export const updateTodoSchema = z.object({
   id: z.string(),
+  title: z.string().min(1).max(256).optional(),
+  completed: z.boolean().optional(),
 });
-export type UpdatePostInput = z.infer<typeof updatePostSchema>;
+export type UpdateTodoInput = z.infer<typeof updateTodoSchema>;
 
 export const byIdSchema = z.object({ id: z.string() });
 export type ById = z.infer<typeof byIdSchema>;

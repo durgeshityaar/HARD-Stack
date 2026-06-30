@@ -1,8 +1,8 @@
 @import "tailwindcss";
-
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-}
+/* Shared design tokens + scans @hard-stack/ui so its component classes are
+   generated here. `@import "tailwindcss"` stays in this app entry so Tailwind
+   auto-detects this app's own source. */
+@import "@hard-stack/ui/styles.css";
 
 html,
 body {

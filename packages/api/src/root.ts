@@ -1,12 +1,12 @@
 import { authRouter } from "./routers/auth";
 import { healthRouter } from "./routers/health";
-import { postRouter } from "./routers/post";
+import { todoRouter } from "./routers/todo";
 import { router } from "./trpc";
 
 export const appRouter = router({
   health: healthRouter,
   auth: authRouter,
-  post: postRouter,
+  todo: todoRouter,
 });
 
 export type AppRouter = typeof appRouter;

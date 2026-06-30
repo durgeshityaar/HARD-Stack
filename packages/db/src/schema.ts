@@ -58,32 +58,35 @@ export const verification = pgTable("verification", {
 });
 
 /**
- * Example application table — a simple authored post. Replace with your domain.
+ * Application table — a per-user todo item. This is the demo's domain model.
  */
-export const post = pgTable("post", {
+export const todo = pgTable("todo", {
   id: text("id")
     .primaryKey()
     .$defaultFn(() => crypto.randomUUID()),
   title: text("title").notNull(),
-  content: text("content").notNull(),
-  authorId: text("author_id")
+  completed: boolean("completed").default(false).notNull(),
+  userId: text("user_id")
     .notNull()
     .references(() => user.id, { onDelete: "cascade" }),
   createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at")
+    .defaultNow()
+    .notNull()
+    .$onUpdate(() => new Date()),
 });
 
 export const userRelations = relations(user, ({ many }) => ({
-  posts: many(post),
+  todos: many(todo),
 }));
 
-export const postRelations = relations(post, ({ one }) => ({
-  author: one(user, {
-    fields: [post.authorId],
+export const todoRelations = relations(todo, ({ one }) => ({
+  user: one(user, {
+    fields: [todo.userId],
     references: [user.id],
   }),
 }));
 
 export type User = typeof user.$inferSelect;
-export type Post = typeof post.$inferSelect;
-export type NewPost = typeof post.$inferInsert;
+export type Todo = typeof todo.$inferSelect;
+export type NewTodo = typeof todo.$inferInsert;

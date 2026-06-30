@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Hard Stack">
+  <title>Hard Stack</title>
+  <rect width="32" height="32" rx="7" fill="#0b0b0f" />
+  <path d="M9 8h3v6h8V8h3v16h-3v-7h-8v7H9z" fill="#7c87ff" />
+</svg>

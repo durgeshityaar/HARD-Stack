@@ -3,6 +3,9 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  // Load env from the monorepo root .env (one source of truth). Only VITE_*
+  // vars are exposed to client code.
+  envDir: new URL("../../", import.meta.url).pathname,
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

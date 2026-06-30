@@ -1,0 +1,9 @@
+{
+  "extends": "@hard-stack/tsconfig/react.json",
+  "compilerOptions": {
+    "paths": {
+      "@hard-stack/ui/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}

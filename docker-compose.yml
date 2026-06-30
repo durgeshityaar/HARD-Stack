@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: hard-stack-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: hard_stack
+    # Host 5433 -> container 5432 (avoids a native Postgres already on host :5432).
+    ports:
+      - "5433:5432"
+    volumes:
+      - hard-stack-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d hard_stack"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  hard-stack-pgdata:

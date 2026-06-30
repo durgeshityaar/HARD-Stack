@@ -27,12 +27,12 @@ bun run dev
 
 ## What runs where
 
-| App          | URL                            | Notes                          |
-| ------------ | ------------------------------ | ------------------------------ |
-| `web`        | http://localhost:5173          | React SPA                      |
-| `server`     | http://localhost:3000          | Hono — tRPC, auth, OpenAPI     |
-| `docs`       | http://localhost:4321          | This site                      |
-| API Reference| http://localhost:3000/reference| Scalar, from the OpenAPI spec  |
+| App           | URL                             | Notes                          |
+| ------------- | ------------------------------- | ------------------------------ |
+| `web`         | http://localhost:5173           | React SPA                      |
+| `server`      | http://localhost:3000           | Hono — tRPC, auth, OpenAPI     |
+| `docs`        | http://localhost:4321           | This site                      |
+| API Reference | http://localhost:3000/reference | Scalar, from the OpenAPI spec  |
 
 ## Common scripts
 

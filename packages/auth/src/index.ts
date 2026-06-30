@@ -19,7 +19,9 @@ export const auth = betterAuth({
   }),
   emailAndPassword: {
     enabled: true,
-    requireEmailVerification: true,
+    // Off for local dev: with Better Auth's default autoSignIn, sign-up lands
+    // the user straight into the app without a mail provider round-trip.
+    requireEmailVerification: false,
     sendResetPassword: async ({ user, url }) => {
       await sendResetPassword({ to: user.email, url });
     },

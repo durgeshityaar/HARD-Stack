@@ -1,4 +1,4 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 import { existsSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { createInterface } from "node:readline/promises";
@@ -48,7 +48,7 @@ Done. Next steps:
 
 // ponytail: string replace across package.json files, not a full AST rename —
 // upgrade to a codemod if scoped imports ever need renaming inside .ts source too
-function renamePackages(dir: string, newScope: string) {
+function renamePackages(dir, newScope) {
   for (const entry of readdirSync(dir)) {
     if (entry === "node_modules" || entry === ".git") continue;
     const full = join(dir, entry);

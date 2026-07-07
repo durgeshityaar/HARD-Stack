@@ -5,22 +5,15 @@
   "type": "module",
   "license": "MIT",
   "bin": {
-    "create-hard-stack": "./src/index.ts"
+    "create-hard-stack": "src/index.js"
   },
   "files": [
     "src"
   ],
-  "scripts": {
-    "lint": "biome check .",
-    "typecheck": "tsc --noEmit"
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "degit": "2.8.4"
-  },
-  "devDependencies": {
-    "@hard-stack/tsconfig": "workspace:*",
-    "@types/degit": "2.8.6",
-    "@types/node": "26.0.1",
-    "typescript": "6.0.3"
   }
 }

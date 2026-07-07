@@ -1,0 +1,26 @@
+{
+  "name": "create-hard-stack",
+  "version": "0.0.1",
+  "description": "Scaffold a new project from the Hard Stack monorepo template",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "create-hard-stack": "./src/index.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "degit": "2.8.4"
+  },
+  "devDependencies": {
+    "@hard-stack/tsconfig": "workspace:*",
+    "@types/degit": "2.8.6",
+    "@types/node": "26.0.1",
+    "typescript": "6.0.3"
+  }
+}
